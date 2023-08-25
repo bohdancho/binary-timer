@@ -12,9 +12,9 @@ const App = () => {
   return (
     <main className='flex h-screen w-screen items-center justify-center text-7xl text-white'>
       <div className='flex flex-col items-end gap-[2vw]'>
-        <Row color={colors.blue[500]} values={getBinary(hours, 5)}></Row>
-        <Row color={colors.green[500]} values={getBinary(minutes, 6)}></Row>
-        <Row color={colors.red[500]} values={getBinary(seconds, 6)}></Row>
+        <Row color={colors.blue[500]} values={getBinary(hours, 23)}></Row>
+        <Row color={colors.green[500]} values={getBinary(minutes, 59)}></Row>
+        <Row color={colors.red[500]} values={getBinary(seconds, 59)}></Row>
       </div>
     </main>
   )

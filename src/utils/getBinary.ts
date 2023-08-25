@@ -1,6 +1,6 @@
 import { Binary } from '@/App'
 
-export const getBinary = (decimal: number, minLength: number) => {
+export const getBinary = (decimal: number, maxValue: number) => {
   let binary: Binary[] = []
 
   while (true) {
@@ -14,9 +14,18 @@ export const getBinary = (decimal: number, minLength: number) => {
     }
   }
 
-  const missingLength = minLength - binary.length
+  const length = getLength(maxValue)
+  const missingLength = length - binary.length
   for (let i = 0; i < missingLength; i++) {
     binary = [0, ...binary]
   }
   return binary
+}
+
+function getLength(maxValue: number) {
+  for (let position = 0; ; position++) {
+    if (2 ** position > maxValue) {
+      return position
+    }
+  }
 }
