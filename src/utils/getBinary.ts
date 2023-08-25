@@ -1,13 +1,11 @@
 import { Binary } from '@/App'
 
-export function getBinary(decimal: number, minLength: number) {
+export const getBinary = (decimal: number, minLength: number) => {
   let binary: Binary[] = []
 
   while (true) {
     const rest = (decimal % 2) as Binary
     decimal = (decimal - rest) / 2
-
-    console.log(decimal, rest)
 
     binary = [rest, ...binary]
     if (decimal === 0 || decimal === 1) {
