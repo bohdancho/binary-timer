@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 
+const MAX_ERROR_MS = 100
+
 export const useClock = () => {
   const [seconds, setSeconds] = useState(new Date().getSeconds())
   const [minutes, setMinutes] = useState(new Date().getMinutes())
@@ -8,7 +10,7 @@ export const useClock = () => {
   useEffect(() => {
     const clock = setInterval(() => {
       setSeconds(new Date().getSeconds())
-    }, 1000)
+    }, MAX_ERROR_MS)
     return () => clearInterval(clock)
   }, [])
 
