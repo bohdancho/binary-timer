@@ -18,6 +18,7 @@ module.exports = {
     },
   },
   rules: {
+    'no-constant-condition': ['warn', { checkLoops: false }],
     'react/react-in-jsx-scope': 'off',
     'react/jsx-uses-react': 'off',
     '@typescript-eslint/no-use-before-define': ['error', { functions: false }],
